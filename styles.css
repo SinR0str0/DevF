@@ -8,7 +8,6 @@
 /* A cada elemento del tipo:*/
 * {
     box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 a { 
@@ -25,6 +24,7 @@ body {
     width: 100%;
     padding: 15px 10px 15px 10px;
     font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .header-inner {
@@ -152,7 +152,7 @@ body {
     justify-content: center;
 }
 .promo-content {
-    padding: 20px 50px;
+    padding: 20px 30px;
 }
 
 .promo-hero .promo-content, .promo-rewards .promo-content {
@@ -246,7 +246,7 @@ body {
 
 .info-strip h2 {
     font-family: 'Times new roman', Times, serif;
-    font-size: 60px;
+    font-size: 40px;
     padding: 0 80px;
     line-height: 1;
     margin-bottom: 25%;
@@ -268,21 +268,38 @@ body {
 
 .footer-inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4,1fr);
     align-items: start;
     gap: 20px;
 }
 
+.footer-inner > .footer-col:nth-of-type(1),
+.footer-inner > .footer-col:nth-of-type(2) {
+    grid-column: span 1; 
+}
+
 .footer-inner li {
     color: rgba(0,0,0, 0.47);
-    font-family: 'Times new roman', Times, serif;
-    font-weight: 10;
-    font-size: 1.2em;
-    background-color: red;
+    font-family: "roboto", "sans-serif";
+    font-weight: 300;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
 }
 
 .footer-social, .footer-legal {
     grid-column: 1/-1;
+}
+
+.footer-legal li {
+    align-items: flex-start;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.footer-legal li:not(:last-child) {
+    padding-right: 15px;
+    border-right: 1px solid rgba(0,0,0, 0.47); 
 }
 
 .site-footer ul {
@@ -290,6 +307,7 @@ body {
     padding: 0;
     margin: 0;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .footer-legal h3, .footer-social h3 {
@@ -308,6 +326,19 @@ body {
     margin-top: 20px;
     font-size: 0.9rem;
     color: rgba(0,0,0, 0.67);
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 /*Responsive*/
@@ -363,5 +394,8 @@ body {
     .footer-social,
     .footer-legal {
         grid-column: auto;
+    }
+    .footer-col li{
+        display: none;
     }
 }
