@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.container > div {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    font-size: 60px;
+    align-items: center;
+    justify-content: center;
+    border: 50px;
+}
+
+.caja1 {
+    background-color: blue;
+}
+.caja2 {
+    background-color: green;
+}
+.caja3 {
+    background-color: yellow;
+}
+.caja4 {
+    background-color: red;
+}
